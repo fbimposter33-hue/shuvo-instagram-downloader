@@ -2,14 +2,14 @@ import { Metadata } from "next";
 
 export const siteConfig = {
   name: "SHUVO Insta Downloader",
-  domain: "shuvo-insta-downloader.vercel.app",
+  domain: "sa-instagram-downloader.vercel.app",
   shortName: "SHUVO Insta",
   creator: "Shuvo Ahmed",
   description:
     "Download Instagram reels, videos and photos — fast, free, and no login required. Just paste the URL and download. By Shuvo Ahmed.",
   ogDescription:
     "Download Instagram reels, videos and photos — fast, free, and no login required. Just paste the URL and download.",
-  url: "https://shuvo-insta-downloader.vercel.app",
+  url: "https://sa-instagram-downloader.vercel.app",
   telegram: "https://t.me/shuvon1ss",
 };
 
