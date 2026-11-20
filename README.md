@@ -17,7 +17,7 @@ respect copyright laws and only download content you have the right to use.
 Media is fetched with the **GenGPT API** (by Tanjid Islam):
 
 ```
-GET https://r-gengpt-api.vercel.app/api/video/download?url=<instagram-url>
+GET https://eita dile to sob ses.vercel.app/api/video/download?url=<instagram-url>
 ```
 
 - The browser calls the API directly (its CORS is `*`). The API can take
@@ -89,8 +89,8 @@ GET https://r-gengpt-api.vercel.app/api/video/download?url=<instagram-url>
 ## 📜 License & Credits
 
 MIT License — see `LICENSE.md`. Original open-source template by Riadh
-Azzoun; rebranded and reworked for **Shuvo Ahmed** with the GenGPT download
-API by Tanjid Islam.
+Azzoun; rebranded and reworked for **Shuvo Ahmed** with the SaGpt download
+API by Shuvo Ahmed .
 
 ---
 
