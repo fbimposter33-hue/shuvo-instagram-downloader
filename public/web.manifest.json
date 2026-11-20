@@ -1,0 +1,30 @@
+{
+  "name": "SHUVO Insta Downloader",
+  "short_name": "SHUVO Insta",
+  "description": "Download Instagram reels, videos and photos \u2014 fast, free, and no login required. By Shuvo Ahmed.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4285f4",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "scope": "/",
+  "orientation": "portrait",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": [
+    "Internet"
+  ],
+  "keywords": [
+    "Instagram video downloader",
+    "Instagram reel downloader",
+    "Instagram photo downloader",
+    "download IG videos",
+    "SHUVO Insta Downloader"
+  ],
+  "author": "Shuvo Ahmed",
+  "copyright": "\u00a9 2026 Shuvo Ahmed. All rights reserved.",
+  "rating": "General",
+  "apple-mobile-web-app-title": "SHUVO Insta Downloader",
+  "apple-mobile-web-app-status-bar-style": "black-translucent"
+}

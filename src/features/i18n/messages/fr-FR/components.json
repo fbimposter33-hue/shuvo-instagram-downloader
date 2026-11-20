@@ -1,0 +1,37 @@
+{
+  "instagramForm": {
+    "inputs": {
+      "url": {
+        "label": "URL de la vidéo",
+        "placeholder": "Coller l'URL de la vidéo Instagram ici...",
+        "validation": {
+          "required": "L'URL de la publication Instagram est requise",
+          "invalid": "Veuillez saisir une URL de publication Instagram valide"
+        }
+      }
+    },
+    "serverErrors": {
+      "notFound": "Le message que vous recherchez n'a pas été trouvé",
+      "notVideo": "Ce message ne contient pas de vidéo",
+      "tooManyRequests": "Trop de requêtes, veuillez réessayer plus tard",
+      "serverError": "Le serveur est indisponible, veuillez réessayer plus tard",
+      "noMedia": "Aucun média téléchargeable trouvé dans cette publication"
+    },
+    "toasts": {
+      "success": "Le téléchargement de la vidéo démarre...",
+      "error": "Quelque chose s'est mal passé, veuillez réessayer."
+    },
+    "hint": "Fonctionne avec les publications et les Reels Instagram",
+    "submit": "Télécharger",
+    "fetching": "Récupération depuis Instagram — cela peut prendre 30 à 60 secondes, merci de patienter…",
+    "result": {
+      "ready": "Votre média est prêt — touchez un fichier pour le télécharger :",
+      "types": {
+        "video": "Vidéo",
+        "image": "Photo",
+        "audio": "Audio seul",
+        "file": "Fichier"
+      }
+    }
+  }
+}

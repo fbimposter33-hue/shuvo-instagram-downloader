@@ -1,0 +1,37 @@
+{
+  "instagramForm": {
+    "inputs": {
+      "url": {
+        "label": "Video URL",
+        "placeholder": "Paste Instagram reel / post URL here...",
+        "validation": {
+          "required": "Instagram post URL is required",
+          "invalid": "Please enter a valid Instagram post URL"
+        }
+      }
+    },
+    "serverErrors": {
+      "notFound": "The post you are looking for was not found",
+      "notVideo": "This post does not contain a video",
+      "tooManyRequests": "Too many requests, please try again later",
+      "serverError": "Server is unavailable, please try again later",
+      "noMedia": "No downloadable media was found in this post (it may be private)"
+    },
+    "toasts": {
+      "success": "Your media is ready — pick a file below to download",
+      "error": "Something went wrong, please try again."
+    },
+    "hint": "Works with Instagram reels, posts and photos",
+    "submit": "Download",
+    "fetching": "Fetching from Instagram — this can take 30–60 seconds, please wait…",
+    "result": {
+      "ready": "Your media is ready — tap a file to download it:",
+      "types": {
+        "video": "Video",
+        "image": "Photo",
+        "audio": "Audio only",
+        "file": "File"
+      }
+    }
+  }
+}

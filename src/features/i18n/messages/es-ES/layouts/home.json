@@ -1,0 +1,20 @@
+{
+  "header": {
+    "themeLabel": "Tema",
+    "localeLabel": "Idioma",
+    "links": {
+      "features": "Características",
+      "howItWorks": "Cómo funciona",
+      "frequentlyAsked": "FAQ"
+    }
+  },
+  "footer": {
+    "copyright": "© {year} SHUVO Insta Downloader. Todos los derechos reservados.",
+    "links": {
+      "terms": "Términos de Servicio",
+      "privacy": "Política de Privacidad",
+      "contact": "Contacto"
+    },
+    "developer": "Desarrollado por Shuvo Ahmed"
+  }
+}
