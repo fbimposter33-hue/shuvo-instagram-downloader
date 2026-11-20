@@ -88,8 +88,7 @@ GET https://eita dile to sob ses.vercel.app/api/video/download?url=<instagram-ur
 
 ## 📜 License & Credits
 
-MIT License — see `LICENSE.md`. Original open-source template by Riadh
-Azzoun; rebranded and reworked for **Shuvo Ahmed** with the SaGpt download
+MIT License — see `LICENSE.md`. Original open-source template by Shuvo Ahmed ; rebranded and reworked for **Shuvo Ahmed** with the SaGpt download
 API by Shuvo Ahmed .
 
 ---
