@@ -45,7 +45,11 @@ export function transformGenGptResponse(
         url: media.url,
         type,
         extension: normalizeExtension(media, type),
-        quality: media.quality || undefined,
+        // The API prefixes quality with the type ("image 2730x3330p 1") —
+        // the UI already shows the type separately, so strip the prefix.
+        quality: media.quality
+          ? media.quality.replace(/^(image|video|audio)\s+/i, "")
+          : undefined,
         resolution:
           media.resolution ||
           (media.width && media.height

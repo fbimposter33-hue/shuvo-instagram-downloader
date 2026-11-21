@@ -14,6 +14,9 @@ export const siteConfig = {
 };
 
 export const siteMetadata: Metadata = {
+  // Absolute base so the generated /opengraph-image URL is absolute —
+  // WhatsApp and other messengers ignore relative og:image URLs.
+  metadataBase: new URL(siteConfig.url),
   title: siteConfig.name,
   description: siteConfig.description,
   creator: siteConfig.creator,

@@ -95,6 +95,10 @@ export function InstagramForm(props: { className?: string }) {
 
   const [result, setResult] = React.useState<InstagramPostResult | null>(null);
   const [resultShortcode, setResultShortcode] = React.useState<string>("post");
+  const [downloadAllProgress, setDownloadAllProgress] = React.useState<{
+    current: number;
+    total: number;
+  } | null>(null);
 
   const t = useTranslations("components.instagramForm");
 
@@ -173,6 +177,7 @@ export function InstagramForm(props: { className?: string }) {
     }
 
     setResult(null);
+    setDownloadAllProgress(null);
 
     try {
       const post = await getInstagramPost({ url: cleanUrl });
@@ -222,6 +227,24 @@ export function InstagramForm(props: { className?: string }) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Browsers only allow one automatic download at a time, so the files
+  // are triggered one by one with a short gap. The first click usually
+  // makes the browser ask permission for multiple downloads.
+  function downloadAll() {
+    if (!result || downloadAllProgress) return;
+    const total = result.medias.length;
+    setDownloadAllProgress({ current: 0, total });
+    result.medias.forEach((media, index) => {
+      setTimeout(() => {
+        triggerDownload(media, resultShortcode, index);
+        setDownloadAllProgress({ current: index + 1, total });
+        if (index === total - 1) {
+          setTimeout(() => setDownloadAllProgress(null), 1000);
+        }
+      }, index * 900);
+    });
+  }
 
   const mediaIcon = (media: InstagramMedia) => {
     if (media.type === "video") return <FileVideo className="h-4 w-4" />;
@@ -322,6 +345,33 @@ export function InstagramForm(props: { className?: string }) {
             <p className="line-clamp-3 text-sm font-medium">{result.title}</p>
           </div>
           <p className="text-muted-foreground text-xs">{t("result.ready")}</p>
+          {result.medias.length > 1 && (
+            <div className="space-y-1">
+              <Button
+                type="button"
+                onClick={downloadAll}
+                disabled={!!downloadAllProgress}
+                className="w-full bg-teal-500 text-white hover:bg-teal-600 dark:bg-teal-700 dark:hover:bg-teal-600"
+              >
+                {downloadAllProgress ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <Download className="h-4 w-4" />
+                )}
+                {downloadAllProgress
+                  ? t("result.downloading", {
+                      current: downloadAllProgress.current,
+                      total: downloadAllProgress.total,
+                    })
+                  : t("result.downloadAll", { count: result.medias.length })}
+              </Button>
+              {downloadAllProgress && (
+                <p className="text-muted-foreground text-center text-xs">
+                  {t("result.downloadAllHint")}
+                </p>
+              )}
+            </div>
+          )}
           <div className="flex flex-col gap-2">
             {result.medias.map((media, index) => (
               <Button

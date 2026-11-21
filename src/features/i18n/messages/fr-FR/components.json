@@ -31,7 +31,10 @@
         "image": "Photo",
         "audio": "Audio seul",
         "file": "Fichier"
-      }
+      },
+      "downloadAll": "Tout télécharger ({count} fichiers)",
+      "downloading": "Téléchargement {current} sur {total}…",
+      "downloadAllHint": "Les fichiers se téléchargent un par un — autorisez les téléchargements multiples si le navigateur le demande."
     }
   }
 }

@@ -32,7 +32,10 @@
           "image": "Photo",
           "audio": "Audio only",
           "file": "File"
-        }
+        },
+        "downloadAll": "Download All ({count} files)",
+        "downloading": "Downloading {current} of {total}…",
+        "downloadAllHint": "Files download one by one — if your browser asks, allow multiple downloads."
       }
     }
   },
