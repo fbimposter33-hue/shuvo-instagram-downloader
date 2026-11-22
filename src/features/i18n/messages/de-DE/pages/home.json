@@ -66,6 +66,28 @@
       "rating": "Benutzerbewertung"
     }
   },
+  "moreDownloaders": {
+    "badge": "Weitere Downloader",
+    "title": "Weitere Downloader",
+    "description": "Alle kostenlos, von Shuvo Ahmed — wähle deine Plattform:",
+    "youAreHere": "Du bist hier",
+    "youtube": {
+      "name": "YouTube Downloader",
+      "tagline": "Videos, Shorts & HD"
+    },
+    "facebook": {
+      "name": "Facebook Downloader",
+      "tagline": "Videos in HD-Qualität"
+    },
+    "tiktok": {
+      "name": "TikTok Downloader",
+      "tagline": "Videos ohne Wasserzeichen"
+    },
+    "instagram": {
+      "name": "Instagram Downloader",
+      "tagline": "Reels, Videos & Fotos"
+    }
+  },
   "frequentlyAsked": {
     "badge": "Haben Sie Fragen?",
     "title": "Häufig gestellte Fragen",

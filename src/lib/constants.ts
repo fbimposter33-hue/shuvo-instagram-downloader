@@ -3,6 +3,7 @@ export const homeSections = {
   features: "features",
   howItWorks: "how-it-works",
   testimonials: "testimonials",
+  moreDownloaders: "more-downloaders",
   frequentlyAsked: "faq",
 } as const;
 
@@ -11,5 +12,6 @@ export const homeLinks = {
   features: "#" + homeSections.features,
   howItWorks: "#" + homeSections.howItWorks,
   testimonials: "#" + homeSections.testimonials,
+  moreDownloaders: "#" + homeSections.moreDownloaders,
   frequentlyAsked: "#" + homeSections.frequentlyAsked,
 } as const;

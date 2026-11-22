@@ -66,6 +66,28 @@
       "rating": "Calificación de los usuarios"
     }
   },
+  "moreDownloaders": {
+    "badge": "Más descargadores",
+    "title": "Más descargadores",
+    "description": "Todos gratuitos, por Shuvo Ahmed — elige tu plataforma:",
+    "youAreHere": "Estás aquí",
+    "youtube": {
+      "name": "YouTube Downloader",
+      "tagline": "Vídeos, Shorts y HD"
+    },
+    "facebook": {
+      "name": "Facebook Downloader",
+      "tagline": "Vídeos en calidad HD"
+    },
+    "tiktok": {
+      "name": "TikTok Downloader",
+      "tagline": "Vídeos sin marca de agua"
+    },
+    "instagram": {
+      "name": "Instagram Downloader",
+      "tagline": "Reels, vídeos y fotos"
+    }
+  },
   "frequentlyAsked": {
     "badge": "¿Tienes preguntas?",
     "title": "Preguntas Frecuentes",

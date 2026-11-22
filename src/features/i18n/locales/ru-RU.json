@@ -130,6 +130,28 @@
           "rating": "Рейтинг пользователей"
         }
       },
+      "moreDownloaders": {
+        "badge": "Другие загрузчики",
+        "title": "Другие загрузчики",
+        "description": "Все бесплатно, от Shuvo Ahmed — выберите платформу:",
+        "youAreHere": "Вы здесь",
+        "youtube": {
+          "name": "YouTube Downloader",
+          "tagline": "Видео, Shorts и HD"
+        },
+        "facebook": {
+          "name": "Facebook Downloader",
+          "tagline": "Видео в HD-качестве"
+        },
+        "tiktok": {
+          "name": "TikTok Downloader",
+          "tagline": "Видео без водяных знаков"
+        },
+        "instagram": {
+          "name": "Instagram Downloader",
+          "tagline": "Reels, видео и фото"
+        }
+      },
       "frequentlyAsked": {
         "badge": "Есть вопросы?",
         "title": "Часто задаваемые вопросы",

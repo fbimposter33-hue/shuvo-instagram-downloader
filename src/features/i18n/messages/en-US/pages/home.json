@@ -66,6 +66,28 @@
       "rating": "User Rating"
     }
   },
+  "moreDownloaders": {
+    "badge": "More Downloaders",
+    "title": "More Downloaders",
+    "description": "All free, by Shuvo Ahmed — pick your platform:",
+    "youAreHere": "You are here",
+    "youtube": {
+      "name": "YouTube Downloader",
+      "tagline": "Videos, Shorts & HD"
+    },
+    "facebook": {
+      "name": "Facebook Downloader",
+      "tagline": "Videos in HD quality"
+    },
+    "tiktok": {
+      "name": "TikTok Downloader",
+      "tagline": "Videos without watermark"
+    },
+    "instagram": {
+      "name": "Instagram Downloader",
+      "tagline": "Reels, videos & photos"
+    }
+  },
   "frequentlyAsked": {
     "badge": "Got Questions?",
     "title": "Frequently Asked Questions",
