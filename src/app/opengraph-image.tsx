@@ -19,7 +19,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #0f766e 0%, #14b8a6 55%, #833ab4 130%)",
+          background: "linear-gradient(135deg, #FF2E7E 0%, #FF9A3D 100%)",
           color: "#ffffff",
           fontFamily: "sans-serif",
           padding: "64px",
@@ -34,6 +34,7 @@ export default function OpengraphImage() {
             height: "110px",
             borderRadius: "28px",
             border: "6px solid rgba(255,255,255,0.9)",
+            boxShadow: "6px 6px 0 0 #2E1B33",
             fontSize: "64px",
             fontWeight: 700,
             marginBottom: "36px",
@@ -49,7 +50,7 @@ export default function OpengraphImage() {
             letterSpacing: "-1px",
           }}
         >
-          SHUVO&nbsp;<span style={{ color: "#99f6e4" }}>Insta Downloader</span>
+          SHUVO&nbsp;<span style={{ color: "#2E1B33" }}>Insta Downloader</span>
         </div>
         <div
           style={{

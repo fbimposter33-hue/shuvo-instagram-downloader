@@ -42,15 +42,15 @@ export function MoreDownloaders() {
   return (
     <section
       id={homeSections.moreDownloaders}
-      className="w-full scroll-mt-12 bg-gradient-to-b from-white to-gray-50 py-12 md:py-24 dark:from-gray-900 dark:to-gray-800"
+      className="w-full scroll-mt-12 py-12 md:py-24"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <div className="mb-2 inline-block rounded-lg bg-teal-100 px-3 py-1 text-sm text-teal-700 dark:bg-teal-800 dark:text-teal-50">
+          <div className="space-y-3">
+            <div className="shadow-hard-sm inline-block -rotate-1 rounded-full border-2 border-[#2E1B33] bg-[#FFB020] px-4 py-1 font-label text-[13px] font-bold tracking-wide text-[#2E1B33] uppercase dark:border-[#FBF8F1]">
               {t("badge")}
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+            <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl">
               {t("title")}
             </h2>
             <p className="text-muted-foreground mx-auto max-w-[700px] md:text-xl">
@@ -63,13 +63,13 @@ export function MoreDownloaders() {
               const card = (
                 <>
                   {url === null && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-teal-500 px-3 py-0.5 text-xs font-semibold whitespace-nowrap text-white">
+                    <span className="shadow-hard-sm absolute -top-3 left-1/2 -translate-x-1/2 -rotate-2 rounded-full border-2 border-[#2E1B33] bg-[#FF2E7E] px-3 py-0.5 font-label text-xs font-bold whitespace-nowrap text-white dark:border-[#FBF8F1]">
                       {t("youAreHere")}
                     </span>
                   )}
                   <div
                     className={cn(
-                      "flex h-14 w-14 items-center justify-center rounded-2xl",
+                      "shadow-hard-sm flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-[#2E1B33] dark:border-[#FBF8F1]",
                       chipClass
                     )}
                   >
@@ -85,13 +85,16 @@ export function MoreDownloaders() {
               );
 
               const cardClass =
-                "relative flex flex-col items-center space-y-3 rounded-xl border bg-white p-4 pt-6 shadow-sm sm:p-6 sm:pt-8 dark:bg-gray-800";
+                "relative flex flex-col items-center space-y-3 rounded-[28px] border-2 border-[#F3E7D3] bg-white p-4 pt-6 shadow-hard-sm sm:p-6 sm:pt-8 dark:border-white/10 dark:bg-white/5";
 
               return url === null ? (
                 <div
                   key={key}
                   aria-current="page"
-                  className={cn(cardClass, "ring-2 ring-teal-500")}
+                  className={cn(
+                    cardClass,
+                    "shadow-[4px_4px_0_0_#FF2E7E] ring-2 ring-[#FF2E7E]"
+                  )}
                 >
                   {card}
                 </div>
@@ -103,7 +106,7 @@ export function MoreDownloaders() {
                   rel="noopener noreferrer"
                   className={cn(
                     cardClass,
-                    "transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+                    "transition-all duration-300 hover:-translate-y-1.5 hover:-rotate-1 hover:shadow-hard"
                   )}
                 >
                   {card}

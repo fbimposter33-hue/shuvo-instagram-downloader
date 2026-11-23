@@ -18,9 +18,24 @@ import { LogoImage, LogoText } from "@/components/logo";
 import { LocaleDropdown } from "@/features/i18n/locale-dropdown";
 import { ThemeToggleButton } from "@/features/theme/theme-toggle-button";
 
-import { Menu } from "lucide-react";
+import { Menu, Send } from "lucide-react";
 
 import { homeLinks } from "@/lib/constants";
+import { siteConfig } from "@/lib/site";
+
+const navLinkClass =
+  "rounded-full border-2 border-transparent px-4 py-2 font-label text-sm font-semibold transition-all duration-200 hover:border-[#2E1B33] hover:bg-white hover:shadow-hard-sm active:translate-y-px dark:hover:border-[#FBF8F1] dark:hover:bg-white/10";
+
+function LogoLockup() {
+  return (
+    <>
+      <span className="shadow-hard-sm flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border-2 border-[#2E1B33] bg-[#FF2E7E] dark:border-[#FBF8F1]">
+        <LogoImage className="h-6 w-6 fill-white" />
+      </span>
+      <LogoText />
+    </>
+  );
+}
 
 export function Header() {
   const isMobile = useIsMobile();
@@ -39,39 +54,39 @@ export function Header() {
   }, [isMobile, open]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white backdrop-blur supports-[backdrop-filter]:bg-gray-50/60 dark:bg-gray-900/80">
-      <div className="container mx-auto flex h-16 items-center px-4">
+    <header className="sticky top-0 z-50 w-full border-b-2 border-[#2E1B33]/10 bg-[#FBF8F1]/85 backdrop-blur-md dark:border-white/10 dark:bg-[#251B2D]/85">
+      <div className="container mx-auto flex h-[72px] items-center px-4">
         <div
           role="button"
           onClick={scrollUp}
-          className="flex cursor-pointer items-center gap-2"
+          className="flex cursor-pointer items-center gap-2.5"
         >
-          <LogoImage className="h-6 w-6 text-teal-500" />
-          <LogoText />
+          <LogoLockup />
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="ml-auto hidden items-center gap-6 md:flex">
-          <a
-            href={homeLinks.features}
-            className="text-sm font-medium transition-colors hover:text-teal-500"
-          >
+        <nav className="ml-auto hidden items-center gap-1.5 md:flex">
+          <a href={homeLinks.features} className={navLinkClass}>
             {t("links.features")}
           </a>
-          <a
-            href={homeLinks.howItWorks}
-            className="text-sm font-medium transition-colors hover:text-teal-500"
-          >
+          <a href={homeLinks.howItWorks} className={navLinkClass}>
             {t("links.howItWorks")}
           </a>
-          <a
-            href={homeLinks.frequentlyAsked}
-            className="text-sm font-medium transition-colors hover:text-teal-500"
-          >
+          <a href={homeLinks.frequentlyAsked} className={navLinkClass}>
             {t("links.frequentlyAsked")}
           </a>
 
-          <div className="border-border flex items-center gap-2 border-l pl-2">
+          <a
+            href={siteConfig.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shadow-hard-pink ml-2 hidden items-center gap-2 rounded-full border-2 border-[#2E1B33] bg-[#2E1B33] px-4 py-2 font-label text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_#FF2E7E] active:translate-y-0 active:shadow-none lg:inline-flex dark:border-[#FBF8F1]"
+          >
+            <Send className="h-4 w-4" />
+            @shuvon1ss
+          </a>
+
+          <div className="border-border ml-2 flex items-center gap-2 border-l pl-2">
             <LocaleDropdown />
             <ThemeToggleButton />
           </div>
@@ -81,28 +96,31 @@ export function Header() {
         <div className="ml-auto flex items-center md:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-9 w-9">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="shadow-hard-sm h-10 w-10 rounded-xl border-2 border-[#2E1B33] bg-white hover:bg-[#FFF9F0] dark:border-[#FBF8F1] dark:bg-white/10"
+              >
                 <Menu className="h-[1.2rem] w-[1.2rem]" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[80%] bg-gradient-to-b from-white to-gray-100 pr-0 sm:w-[350px] dark:from-gray-800 dark:to-gray-900"
+              className="w-[80%] bg-[#FBF8F1] pr-0 sm:w-[350px] dark:bg-[#251B2D]"
             >
               <SheetHeader className="border-b">
                 <SheetTitle>
-                  <div className="flex items-center gap-2">
-                    <LogoImage className="h-6 w-6 text-teal-500" />
-                    <LogoText />
+                  <div className="flex items-center gap-2.5">
+                    <LogoLockup />
                   </div>
                 </SheetTitle>
               </SheetHeader>
               <div className="flex h-full flex-col">
-                <nav className="flex flex-col gap-4 px-4">
+                <nav className="flex flex-col gap-3 px-4">
                   <a
                     href={homeLinks.features}
-                    className="px-2 py-2 text-lg font-medium transition-colors hover:text-teal-500"
+                    className="shadow-hard-sm rounded-2xl border-2 border-[#2E1B33] bg-white px-4 py-3 text-lg font-semibold transition-all duration-200 active:translate-y-px dark:border-[#FBF8F1] dark:bg-white/10"
                     onClick={() => setOpen(false)}
                   >
                     {t("links.features")}
@@ -110,17 +128,27 @@ export function Header() {
 
                   <a
                     href={homeLinks.howItWorks}
-                    className="px-2 py-2 text-lg font-medium transition-colors hover:text-teal-500"
+                    className="shadow-hard-sm rounded-2xl border-2 border-[#2E1B33] bg-white px-4 py-3 text-lg font-semibold transition-all duration-200 active:translate-y-px dark:border-[#FBF8F1] dark:bg-white/10"
                     onClick={() => setOpen(false)}
                   >
                     {t("links.howItWorks")}
                   </a>
                   <a
                     href={homeLinks.frequentlyAsked}
-                    className="px-2 py-2 text-lg font-medium transition-colors hover:text-teal-500"
+                    className="shadow-hard-sm rounded-2xl border-2 border-[#2E1B33] bg-white px-4 py-3 text-lg font-semibold transition-all duration-200 active:translate-y-px dark:border-[#FBF8F1] dark:bg-white/10"
                     onClick={() => setOpen(false)}
                   >
                     {t("links.frequentlyAsked")}
+                  </a>
+                  <a
+                    href={siteConfig.telegram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shadow-hard-pink flex items-center gap-2 rounded-2xl border-2 border-[#2E1B33] bg-[#2E1B33] px-4 py-3 text-lg font-semibold text-white dark:border-[#FBF8F1]"
+                    onClick={() => setOpen(false)}
+                  >
+                    <Send className="h-5 w-5" />
+                    @shuvon1ss
                   </a>
                 </nav>
               </div>

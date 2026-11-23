@@ -262,17 +262,18 @@ export function InstagramForm(props: { className?: string }) {
   };
 
   return (
-    <div className={cn("w-full space-y-2", props.className)}>
-      {errorMessage ? (
-        <p className="h-4 text-sm text-red-500 sm:text-start">{errorMessage}</p>
-      ) : (
-        <div className="h-4"></div>
-      )}
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="flex w-full flex-col gap-2 sm:flex-row sm:items-end"
-        >
+    <div className={cn("w-full", props.className)}>
+      <div className="card-goriber p-4 text-left shadow-[6px_6px_0_0_#2E1B33,0_18px_40px_rgba(255,46,126,0.3)] sm:p-5 dark:border-white/15 dark:bg-[#2E1B33] dark:shadow-[6px_6px_0_0_rgba(251,248,241,0.9),0_18px_40px_rgba(255,46,126,0.3)]">
+        <div className="mb-2 flex min-h-5 items-center">
+          {errorMessage ? (
+            <p className="text-sm font-medium text-red-500">{errorMessage}</p>
+          ) : null}
+        </div>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex w-full flex-col gap-3 sm:flex-row sm:items-center"
+          >
           <FormField
             control={form.control}
             name="url"
@@ -291,6 +292,7 @@ export function InstagramForm(props: { className?: string }) {
                       minLength={1}
                       maxLength={255}
                       placeholder={t("inputs.url.placeholder")}
+                      className="h-14 rounded-2xl border-2 border-[#E1DAD0] bg-[#FFF9F0] px-5 pr-14 text-base shadow-none transition-all duration-200 focus-visible:border-[#FF2E7E] focus-visible:ring-4 focus-visible:ring-[#FF2E7E]/25 md:text-base dark:border-white/15 dark:bg-white/5"
                     />
                     {isShowClearButton && (
                       <Button
@@ -298,9 +300,9 @@ export function InstagramForm(props: { className?: string }) {
                         variant="ghost"
                         type="button"
                         onClick={clearUrlField}
-                        className="absolute top-1/2 right-2 h-4 w-4 -translate-y-1/2 cursor-pointer"
+                        className="shadow-hard-sm absolute top-1/2 right-3 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-xl border-2 border-[#E1DAD0] bg-white text-[#2E1B33] transition-all duration-200 hover:bg-[#FFF9F0] active:translate-y-[-45%] dark:border-white/20 dark:bg-white/10 dark:text-[#FBF8F1]"
                       >
-                        <X className="text-red-500" />
+                        <X className="h-4 w-4" />
                       </Button>
                     )}
                   </div>
@@ -311,7 +313,7 @@ export function InstagramForm(props: { className?: string }) {
           <Button
             disabled={isDisabled}
             type="submit"
-            className="bg-teal-500 text-white hover:bg-teal-600 dark:bg-teal-700 dark:hover:bg-teal-600"
+            className="h-14 shrink-0 rounded-2xl border-2 border-[#2E1B33] bg-[#FF2E7E] px-7 font-label text-base font-bold text-white shadow-[4px_4px_0_0_#2E1B33,0_8px_20px_rgba(255,46,126,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#FF2E7E] active:translate-y-0 active:shadow-none disabled:opacity-60 dark:border-[#FBF8F1]"
           >
             {isPending ? (
               <Loader2 className="h-4 w-4 animate-spin" />
@@ -320,25 +322,28 @@ export function InstagramForm(props: { className?: string }) {
             )}
             {t("submit")}
           </Button>
-        </form>
-      </Form>
-      {isPending ? (
-        <p className="text-center text-xs text-amber-600 dark:text-amber-400">
-          {t("fetching")}
-        </p>
-      ) : (
-        <p className="text-muted-foreground text-center text-xs">{t("hint")}</p>
-      )}
+          </form>
+        </Form>
+        {isPending ? (
+          <p className="mt-3 text-center text-xs font-medium text-amber-600 dark:text-amber-400">
+            {t("fetching")}
+          </p>
+        ) : (
+          <p className="text-muted-foreground mt-3 text-center text-xs">
+            {t("hint")}
+          </p>
+        )}
+      </div>
 
       {result && (
-        <div className="mx-auto w-full max-w-xl space-y-3 rounded-xl border bg-white p-4 text-left shadow-sm dark:border-gray-700 dark:bg-gray-800">
+        <div className="shadow-hard mx-auto mt-4 w-full max-w-xl space-y-3 rounded-[28px] border-2 border-[#F3E7D3] bg-white p-4 text-left sm:p-5 dark:border-white/15 dark:bg-[#2E1B33]">
           <div className="flex items-start gap-3">
             {result.thumbnail && (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={result.thumbnail}
                 alt={result.title}
-                className="h-16 w-16 shrink-0 rounded-lg object-cover"
+                className="h-20 w-20 shrink-0 rounded-2xl border-2 border-[#F3E7D3] object-cover dark:border-white/15"
                 loading="lazy"
               />
             )}
@@ -351,7 +356,7 @@ export function InstagramForm(props: { className?: string }) {
                 type="button"
                 onClick={downloadAll}
                 disabled={!!downloadAllProgress}
-                className="w-full bg-teal-500 text-white hover:bg-teal-600 dark:bg-teal-700 dark:hover:bg-teal-600"
+                className="shadow-hard h-12 w-full rounded-2xl border-2 border-[#2E1B33] bg-[#00A878] font-label text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#00A878] active:translate-y-0 active:shadow-none disabled:opacity-60 dark:border-[#FBF8F1]"
               >
                 {downloadAllProgress ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
@@ -379,10 +384,12 @@ export function InstagramForm(props: { className?: string }) {
                 type="button"
                 variant="outline"
                 onClick={() => triggerDownload(media, resultShortcode, index)}
-                className="w-full justify-between hover:border-teal-500 hover:text-teal-600"
+                className="shadow-hard-sm h-12 w-full justify-between rounded-2xl border-2 border-[#E1DAD0] bg-white px-4 font-label font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:border-[#FF2E7E] hover:bg-white hover:text-[#FF2E7E] dark:border-white/15 dark:bg-white/5"
               >
-                <span className="flex items-center gap-2">
-                  {mediaIcon(media)}
+                <span className="flex items-center gap-2.5">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg border-2 border-[#2E1B33]/10 bg-[#FFF0F6] text-[#FF2E7E] dark:border-white/15 dark:bg-white/10">
+                    {mediaIcon(media)}
+                  </span>
                   {mediaLabel(media, index)}
                 </span>
                 <span className="flex items-center gap-1 text-xs uppercase">

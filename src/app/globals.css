@@ -3,11 +3,67 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Goriberbondhu.shop theme (DESIGN__1.md, measured 2026-11-23)
+ * Warm Snow surfaces, Deep Purple ink, Vivid Pink primary,
+ * Baloo Da 2 headings + Hind Siliguri labels.
+ */
+@theme {
+  /* Legacy teal accents used across the home components are remapped to
+     the Goriber pink scale so every badge/icon/CTA picks up the theme. */
+  --color-teal-50: #fff0f6;
+  --color-teal-100: #ffe0ee;
+  --color-teal-200: #ffc7dd;
+  --color-teal-300: #ffa3c7;
+  --color-teal-400: #ff5c9e;
+  --color-teal-500: #ff2e7e;
+  --color-teal-600: #e6006b;
+  --color-teal-700: #b31257;
+  --color-teal-800: #8f1047;
+  --color-teal-900: #5c0b2e;
+  --color-teal-950: #3d071e;
+
+  /* Warm, purple-tinted neutrals instead of the stock cool grays. */
+  --color-gray-50: #fff9f0;
+  --color-gray-100: #fbf8f1;
+  --color-gray-200: #f3e7d3;
+  --color-gray-300: #e1dad0;
+  --color-gray-400: #8b7e8c;
+  --color-gray-500: #6b5a70;
+  --color-gray-600: #57445c;
+  --color-gray-700: #453248;
+  --color-gray-800: #3a2542;
+  --color-gray-900: #2e1b33;
+  --color-gray-950: #251b2d;
+
+  /* Goriber named tokens */
+  --color-warm-snow: #fbf8f1;
+  --color-surface-low: #fff9f0;
+  --color-surface-card: #fffdf8;
+  --color-surface-highest: #eadfc9;
+  --color-ink: #2e1b33;
+  --color-ink-variant: #6b5a70;
+  --color-ink-muted: #8b7e8c;
+  --color-mela-pink: #ff2e7e;
+  --color-mela-marigold: #ffb020;
+  --color-mela-orange: #ff9a3d;
+  --color-mela-green: #25d366;
+  --color-mela-success: #00a878;
+  --color-outline-warm: #e1dad0;
+  --color-outline-pale: #f3e7d3;
+
+  --shadow-hard: 4px 4px 0 0 #2e1b33;
+  --shadow-hard-sm: 3px 3px 0 0 rgba(46, 27, 51, 0.9);
+  --shadow-pink-glow: 0 8px 20px rgba(255, 46, 126, 0.35);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-baloo);
+  --font-display: var(--font-baloo);
+  --font-label: var(--font-hind);
+  --font-mono: var(--font-hind);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -37,79 +93,82 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  /* Goriber corners: 16px default, 20px medium, 28px cards */
+  --radius-sm: 1rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
+  --radius-xl: 2rem;
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --radius: 1rem;
+  --background: #fbf8f1;
+  --foreground: #2e1b33;
+  --card: #fffdf8;
+  --card-foreground: #2e1b33;
+  --popover: #ffffff;
+  --popover-foreground: #2e1b33;
+  --primary: #ff2e7e;
+  --primary-foreground: #ffffff;
+  --secondary: #ffb020;
+  --secondary-foreground: #2e1b33;
+  --muted: #fff9f0;
+  /* #6B5A70 (not the paler #8B7E8C) — muted-foreground carries body copy,
+     and #8B7E8C only reaches 3.63:1 on Warm Snow; it stays metadata-only. */
+  --muted-foreground: #6b5a70;
+  --accent: #f3e7d3;
+  --accent-foreground: #2e1b33;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --border: #e1dad0;
+  --input: #e1dad0;
+  --ring: #ff2e7e;
+  --chart-1: #ff2e7e;
+  --chart-2: #ffb020;
+  --chart-3: #00a878;
+  --chart-4: #ff9a3d;
+  --chart-5: #25d366;
+  --sidebar: #fffdf8;
+  --sidebar-foreground: #2e1b33;
+  --sidebar-primary: #ff2e7e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fff9f0;
+  --sidebar-accent-foreground: #2e1b33;
+  --sidebar-border: #e1dad0;
+  --sidebar-ring: #ff2e7e;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #251b2d;
+  --foreground: #fbf8f1;
+  --card: #2e1b33;
+  --card-foreground: #fbf8f1;
+  --popover: #2e1b33;
+  --popover-foreground: #fbf8f1;
+  --primary: #ff2e7e;
+  --primary-foreground: #ffffff;
+  --secondary: #ffb020;
+  --secondary-foreground: #2e1b33;
+  --muted: #3a2542;
+  --muted-foreground: #d9c8f5;
+  --accent: #3a2542;
+  --accent-foreground: #fbf8f1;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: rgba(251, 248, 241, 0.14);
+  --input: rgba(251, 248, 241, 0.18);
+  --ring: #ff5c9e;
+  --chart-1: #ff2e7e;
+  --chart-2: #ffb020;
+  --chart-3: #00a878;
+  --chart-4: #ff9a3d;
+  --chart-5: #25d366;
+  --sidebar: #2e1b33;
+  --sidebar-foreground: #fbf8f1;
+  --sidebar-primary: #ff2e7e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #3a2542;
+  --sidebar-accent-foreground: #fbf8f1;
+  --sidebar-border: rgba(251, 248, 241, 0.14);
+  --sidebar-ring: #ff5c9e;
 }
 
 @layer base {
@@ -117,6 +176,97 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
+    font-family:
+      "Baloo Da 2", "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family:
+      "Baloo Da 2", "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+  label {
+    font-family:
+      "Hind Siliguri", "Baloo Da 2", "Noto Sans Bengali", sans-serif;
+  }
+}
+
+@layer components {
+  /* Goriber card recipe: white surface, 2px pale outline, 28px corners */
+  .card-goriber {
+    background-color: #ffffff;
+    color: #251b2d;
+    border: 2px solid #f3e7d3;
+    border-radius: 28px;
+  }
+}
+
+/*
+ * v2 redesign motion + extra hard shadows (Goriberbondhu tokens).
+ * Marquee / fade-up / float are kept at or under 0.5s per-transition
+ * and fully disabled under prefers-reduced-motion below.
+ */
+@theme {
+  --shadow-hard-pink: 4px 4px 0 0 #ff2e7e;
+  --shadow-hard-lg: 6px 6px 0 0 #2e1b33;
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-fade-up: fade-up 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-float-y: float-y 5s ease-in-out infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes float-y {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+@layer utilities {
+  /* Dotted-paper backdrop in the ink tone (flips to Warm Snow in dark) */
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      rgba(46, 27, 51, 0.1) 1.5px,
+      transparent 1.5px
+    );
+    background-size: 22px 22px;
+  }
+  .dark .bg-dot-grid {
+    background-image: radial-gradient(
+      rgba(251, 248, 241, 0.12) 1.5px,
+      transparent 1.5px
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-fade-up,
+  .animate-float-y {
+    animation: none !important;
   }
 }

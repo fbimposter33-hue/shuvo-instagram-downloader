@@ -1,11 +1,11 @@
 import React from "react";
 
 import { cn } from "@/lib/utils";
-import { Fira_Sans as LogoFont } from "next/font/google";
+import { Baloo_Da_2 as LogoFont } from "next/font/google";
 
 const logoFont = LogoFont({
   variable: "--font-logo",
-  subsets: ["latin"],
+  subsets: ["latin", "bengali"],
   weight: ["400", "700"],
 });
 
@@ -20,7 +20,7 @@ export function LogoText({ className, ...props }: React.ComponentProps<"div">) {
       {...props}
     >
       <span className="font-bold">SHUVO</span>
-      <span className="text-teal-500"> Insta Downloader</span>
+      <span className="text-primary"> Insta Downloader</span>
     </div>
   );
 }
